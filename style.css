@@ -60,7 +60,7 @@ h1 {
 .insertTxt {
   padding: 1%;
   width: 30%;
-  height: 90%;
+  min-height: 90%;
   background-color: #d99c79;
   font-size: 1.4rem;
   border-bottom-left-radius: 25px;
@@ -71,6 +71,13 @@ h1 {
     20.3px 19.4px 17.9px rgba(0, 0, 0, 0.042), 38px 36.3px 33.4px rgba(0, 0, 0, 0.05), 91px 87px 80px rgba(0, 0, 0, 0.07);
   transition: 0.5s;
 }
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
 /* footer */
 .icons {
   margin-top: 32vh;
@@ -184,30 +191,32 @@ button:hover .button-text {
   .titulo {
     width: 100%;
     font-size: 0.9rem;
-    margin-bottom: 14%;
+    margin-bottom: 55%;
   }
   .main {
+    height: 16rem;
     flex-direction: column;
-    height: 66vh;
   }
   .inputTxt {
+    height: 16rem;
     width: 85%;
     margin-bottom: 8%;
   }
   #traducir {
-    height: 100%;
+    height: 16rem;
     font-size: 1rem;
     border-bottom-left-radius: 25px;
     border-top-right-radius: 25px;
   }
   .insertTxt {
+    height: 2%;
     width: 85%;
     margin-top: 8%;
     font-size: 1rem;
-    height: 100%;
   }
+
   .icons {
-    margin-top: 4vh;
+    margin-top: 60%;
   }
   .icon {
     margin-bottom: 14%;

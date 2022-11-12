@@ -18,23 +18,27 @@ const getApiTrad = async (traducirEsto) => {
     },
     body: `[{"Text":"${traducirEsto}"}]`,
   };
-  //elegir idioma al cual se va a traducir el texto escrito en el input
-  const traducirA = 'en';
+  const tradLang = 'en';
+
   const response = await fetch(
-    `https://microsoft-translator-text.p.rapidapi.com/translate?to%5B0%5D=${traducirA}&api-version=3.0&profanityAction=NoAction&textType=plain`,
+    `https://microsoft-translator-text.p.rapidapi.com/translate?to%5B0%5D=${tradLang}&api-version=3.0&profanityAction=NoAction&textType=plain`,
     options
   );
+  //elegir idioma al cual se va a traducir el texto escrito en el input
+  const toggLang = document.querySelector('#toggLang'); // ? BOTON CAMBIAR IDIOMA
+  toggLang.addEventListener('click', changeLang(tradLang));
+
   traducirTexto(response);
-  /*
-    .then((response) => response.json())
-    .then((response) => {
-      const txtTraducido = response[0].translations[0].text;
-      console.log(txtTraducido);
-      insertTextoTraducido(txtTraducido);
-    })
-    .catch((err) => console.error(err));
-    */
 };
+const changeLang = async (tradLang) => {
+  if (tradLang === 'en') {
+    tradLang = 'es';
+  } else {
+    tradLang = 'en';
+  }
+  console.log(tradLang);
+};
+
 const traducirTexto = async (response) => {
   const res = await response.json();
   const txtTraducido = res[0].translations[0].text;
